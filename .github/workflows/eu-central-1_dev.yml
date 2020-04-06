@@ -1,7 +1,7 @@
 name: aws-eb-deploy
 env:
   TF_VAR_AWS_REGION:          eu-central-1
-  TF_VAR_PUBLIC_KEY:          ${{ secret.PUBLIC_KEY }}
+  TF_VAR_PUBLIC_KEY:          ${{ secrets.PUBLIC_KEY }}
 
 
 on:
