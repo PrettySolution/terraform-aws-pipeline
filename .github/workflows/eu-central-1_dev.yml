@@ -1,6 +1,7 @@
 name: aws-eb-deploy
 env:
-  AWS_REGION:          eu-central-1
+  TF_VAR_AWS_REGION:          eu-central-1
+  TF_VAR_PUBLIC_KEY:          {{ secret.PUBLIC_KEY }}
 
 
 on:
@@ -27,8 +28,7 @@ jobs:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: 'init'
           tf_actions_working_dir: 'eu-central-1/dev'
-        env:
-          AWS_REGION: ${{ env.AWS_REGION }}
+
 
       - name: 'Terraform plan'
         uses: hashicorp/terraform-github-actions@master
@@ -36,5 +36,4 @@ jobs:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: 'eu-central-1/dev'
-        env:
-          TF_VAR_AWS_REGION: ${{ env.AWS_REGION }}
+
