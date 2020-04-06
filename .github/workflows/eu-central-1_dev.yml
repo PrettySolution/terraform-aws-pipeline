@@ -23,6 +23,6 @@ jobs:
 
       - name: Run Terraform init
         run: |
-          ls -la \
-          terraform init eu-central-1/dev \
+          ls -la
+          terraform init eu-central-1/dev
           terraform plan eu-central-1/dev
