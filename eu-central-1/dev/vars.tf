@@ -1,7 +1,3 @@
-variable "AWS_REGION" {
-  default = ""
-}
-
-variable "PUBLIC_KEY" {
-  default = ""
-}
+variable "AWS_REGION" {}
+variable "ENV" {}
+variable "PUBLIC_KEY" {}
