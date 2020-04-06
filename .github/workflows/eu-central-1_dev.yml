@@ -21,8 +21,18 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY_DEV }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Run Terraform init
-        run: |
-          cd eu-central-1/dev
-          terraform init
-          terraform plan
+      - name: 'Terraform Init'
+          uses: hashicorp/terraform-github-actions@master
+          with:
+            tf_actions_version: 0.12.24
+            tf_actions_subcommand: 'init eu-central-1/dev'
+          env:
+            AWS_REGION: ${{ env.AWS_REGION }}
+
+      - name: 'Terraform plan'
+          uses: hashicorp/terraform-github-actions@master
+          with:
+            tf_actions_version: 0.12.24
+            tf_actions_subcommand: 'plan eu-central-1/dev'
+          env:
+            AWS_REGION: ${{ env.AWS_REGION }}
