@@ -1,4 +1,7 @@
-variable "AWS_REGION" {}
-variable "AWS_SECRET_KEY" {}
-variable "AWS_ACCESS_KEY" {}
-variable "PUBLIC_KEY" {}
+variable "AWS_REGION" {
+  default = ""
+}
+
+variable "PUBLIC_KEY" {
+  default = ""
+}
