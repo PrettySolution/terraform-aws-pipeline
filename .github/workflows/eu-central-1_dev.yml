@@ -25,7 +25,8 @@ jobs:
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
-          tf_actions_subcommand: 'init eu-central-1/dev'
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: 'eu-central-1/dev'
         env:
           AWS_REGION: ${{ env.AWS_REGION }}
 
@@ -33,6 +34,7 @@ jobs:
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
-          tf_actions_subcommand: 'plan eu-central-1/dev'
+          tf_actions_subcommand: 'plan'
+          tf_actions_working_dir: 'eu-central-1/dev'
         env:
           AWS_REGION: ${{ env.AWS_REGION }}
