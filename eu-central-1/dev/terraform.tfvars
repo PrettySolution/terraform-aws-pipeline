@@ -1,3 +1,4 @@
+// this file should be named as terraform.tfvars
 AWS_REGION = "eu-central-1"
 PUBLIC_KEY = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAKjcalC72AXxLTPeWZ1G8MqkSWlhTLgftGUozv3mVWpswa6ha93ei09l5Q7Dpm5j/zOXm6EplqQ9X7GJ/vZfyP1Gfhch8ITuj1VTHVoCnNS8b2YT6jOimrj+uDGydKRvQbo5QLxmPTmjJtUENJpXqIntqk2cnEX2v/BnODCIXnDJiAeqKiLcOZ9h41z1dxYGxd2ag9bEIHTpde0N+p+rV1uaI2JTUD9HuzAAH01BjNGdRExDyUm83wVMK5uMS35jzb6oPokz7d03niwGCGzw8Av/7TuVI6vW0r5fH0KiKHDGQxxrZIPB8pOQIIJ2P/BlWbDEONErBnJWVilYmF3xT"
 ENV        = "dev"

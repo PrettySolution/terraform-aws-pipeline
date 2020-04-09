@@ -7,7 +7,7 @@ credentials.csv
 .terragrunt-cache
 *.tfstate*
 crash.log
-*/*.tfvars
+*.tfvars
 
 # Secrets are not allowed in general
 *.key
