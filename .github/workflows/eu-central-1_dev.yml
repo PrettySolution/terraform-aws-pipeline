@@ -1,0 +1,38 @@
+name: eu-central-1 DEV Deployment
+env:
+  TF_VAR_AWS_REGION:          eu-central-1
+  TF_VAR_PUBLIC_KEY:          ${{ secrets.PUBLIC_KEY }}
+  TF_VAR_ENV:                 ${{ github.ref }}
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials Action For GitHub Actions
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_DEV }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY_DEV }}
+          aws-region: ${{ env.TF_VAR_AWS_REGION }}
+
+      - name: 'Terraform Init'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.12.24
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: 'eu-central-1/dev'
+
+      - name: 'Terraform Plan'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.12.24
+          tf_actions_subcommand: 'plan'
+          tf_actions_working_dir: 'eu-central-1/dev'
+

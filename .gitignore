@@ -7,11 +7,13 @@ credentials.csv
 .terragrunt-cache
 *.tfstate*
 crash.log
+*/*.tfvars
 
 # Secrets are not allowed in general
 *.key
 *.pem
-
+*.pub
+mykey
 # Secrets are encrypted using git-crypt
 !secrets/*
 
