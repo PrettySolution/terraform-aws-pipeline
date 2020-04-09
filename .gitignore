@@ -12,7 +12,8 @@ crash.log
 # Secrets are not allowed in general
 *.key
 *.pem
-
+*.pub
+mykey
 # Secrets are encrypted using git-crypt
 !secrets/*
 
